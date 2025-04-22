@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_ex001/theme/app_colors.dart';
+
+class HomePage extends StatefulWidget {
+  
+  const HomePage({super.key});
+  
+  @override
+  State<HomePage> createState() {
+    return HomePageState();
+  }
+}
+
+class HomePageState extends State<HomePage> {
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.background,
+      appBar: AppBar(
+        backgroundColor: AppColors.primary,
+        title: Text(
+          "App",
+          style: TextStyle(color: AppColors.white),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 20),
+            Text("Lorem ipsum dolor sit amet", style: TextStyle(color: AppColors.black))
+          ],
+        ),
+      )
+    );
+  }
+}
