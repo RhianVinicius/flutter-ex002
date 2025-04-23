@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ex001/pages/home_page_content.dart';
 import 'package:flutter_ex001/theme/app_colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,13 +26,7 @@ class HomePageState extends State<HomePage> {
         ),
       ),
       body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 20),
-            Text("Lorem ipsum dolor sit amet", style: TextStyle(color: AppColors.black))
-          ],
-        ),
+        child: HomePageContent()
       )
     );
   }
