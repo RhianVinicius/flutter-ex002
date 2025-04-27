@@ -20,6 +20,12 @@ class HomePageContentState extends State<HomePageContent> {
     });
   }
 
+  void decreaseCounter() {
+    setState(() {
+      counter--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -46,7 +52,11 @@ class HomePageContentState extends State<HomePageContent> {
           children: [
             ElevatedButton(
               onPressed: inclementCounter, 
-              child: Text("Somar")
+              child: Text("adicionar")
+            ),
+            ElevatedButton(
+              onPressed: decreaseCounter, 
+              child: Text("retirar")
             )
           ],
         )
