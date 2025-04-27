@@ -12,23 +12,45 @@ class HomePageContent extends StatefulWidget {
 
 
 class HomePageContentState extends State<HomePageContent> {
-  int counter = 564;
+  int counter = 0;
+
+  void inclementCounter() {
+    setState(() {
+      counter++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text("Contador", style: TextStyle(color:  AppColors.black)),
-          Container(
-            width: 250,
-            height: 250,
-            color: AppColors.primaryDark,
-            child: Center(child: Text(counter.toString(), style: TextStyle(color:  AppColors.white))),
-          ),
-        ]
-      )
+    return Column(
+      children: [
+        Align(
+          alignment: Alignment.topCenter,
+          child: SizedBox(
+            height: 300,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text("Contador", style: TextStyle(color:  AppColors.black)),
+                Container(
+                  width: 250,
+                  height: 250,
+                  color: AppColors.primaryDark,
+                  child: Center(child: Text(counter.toString(), style: TextStyle(color:  AppColors.white))),
+                ),
+              ]
+            )
+          )
+        ),
+        Row(
+          children: [
+            ElevatedButton(
+              onPressed: inclementCounter, 
+              child: Text("Somar")
+            )
+          ],
+        )
+      ]
     );
   }
 }
