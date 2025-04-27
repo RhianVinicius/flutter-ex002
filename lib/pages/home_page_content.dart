@@ -14,7 +14,7 @@ class HomePageContent extends StatefulWidget {
 class HomePageContentState extends State<HomePageContent> {
   int counter = 0;
 
-  void inclementCounter() {
+  void increaseCounter() {
     setState(() {
       counter++;
     });
@@ -23,6 +23,12 @@ class HomePageContentState extends State<HomePageContent> {
   void decreaseCounter() {
     setState(() {
       counter--;
+    });
+  }
+
+  void resetCounter() {
+    setState(() {
+      counter = 0;
     });
   }
 
@@ -51,12 +57,16 @@ class HomePageContentState extends State<HomePageContent> {
         Row(
           children: [
             ElevatedButton(
-              onPressed: inclementCounter, 
+              onPressed: increaseCounter, 
               child: Text("adicionar")
             ),
             ElevatedButton(
               onPressed: decreaseCounter, 
               child: Text("retirar")
+            ),
+            ElevatedButton(
+              onPressed: resetCounter,
+              child: Text("resetar")
             )
           ],
         )
