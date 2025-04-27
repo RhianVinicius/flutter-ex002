@@ -12,7 +12,7 @@ class HomePageContent extends StatefulWidget {
 
 
 class HomePageContentState extends State<HomePageContent> {
-  int counter = 564;
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
