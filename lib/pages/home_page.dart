@@ -21,7 +21,7 @@ class HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: Text(
-          "App",
+          "Ex002 - Contador",
           style: TextStyle(color: AppColors.white),
         ),
       ),

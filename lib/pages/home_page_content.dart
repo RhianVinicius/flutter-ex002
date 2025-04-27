@@ -39,34 +39,130 @@ class HomePageContentState extends State<HomePageContent> {
         Align(
           alignment: Alignment.topCenter,
           child: SizedBox(
-            height: 300,
+            height: 700,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("Contador", style: TextStyle(color:  AppColors.black)),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 20),
+                  child: Text(
+                    "Contador",
+                    style: TextStyle(
+                      color: AppColors.white,
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                      shadows: [
+                        Shadow(
+                          offset: Offset(2, 2),
+                          blurRadius: 5,
+                          color: AppColors.shadow
+                        )
+                      ]
+                    ),
+                  ),
+                ),
                 Container(
                   width: 250,
                   height: 250,
-                  color: AppColors.primaryDark,
-                  child: Center(child: Text(counter.toString(), style: TextStyle(color:  AppColors.white))),
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryDark,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.grey,
+                        blurRadius: 6,
+                        spreadRadius: 1
+                      )
+                    ]
+                  ),
+                  child: Center(
+                    child: Text(
+                      counter.toString(),
+                      style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: 46,
+                        fontFamily: "monospace",
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 2
+                      )
+                    )
+                  ),
                 ),
               ]
             )
           )
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: increaseCounter, 
-              child: Text("adicionar")
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: ElevatedButton(
+                onPressed: increaseCounter,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.green,
+                  foregroundColor: Colors.white,
+                  elevation: 2,
+                  shadowColor: AppColors.grey,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                  textStyle: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32), // Arredondamento
+                  ),
+                ),
+                child: Text("Adicionar", style: TextStyle(color: AppColors.white, fontSize: 16))),
             ),
-            ElevatedButton(
-              onPressed: decreaseCounter, 
-              child: Text("retirar")
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: ElevatedButton(
+                onPressed: decreaseCounter,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.red,
+                  foregroundColor: Colors.white,
+                  elevation: 2,
+                  shadowColor: AppColors.grey,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                  textStyle: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32), // Arredondamento
+                  ),
+                ),
+                child: Text("Retirar", style: TextStyle(color: AppColors.white, fontSize: 16))),
             ),
-            ElevatedButton(
-              onPressed: resetCounter,
-              child: Text("resetar")
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: ElevatedButton(
+                onPressed: resetCounter,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.grey,
+                  foregroundColor: Colors.white,
+                  elevation: 2,
+                  shadowColor: AppColors.grey,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                  textStyle: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32), // Arredondamento
+                  ),
+                ),
+                child: Text("Resetar", style: TextStyle(color: AppColors.white, fontSize: 16))),
             )
           ],
         )
